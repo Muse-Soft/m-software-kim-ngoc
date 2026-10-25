@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kim Ngọc — Trang sức chế tác bằng tay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141210; --bg2:#1E1A17; --ink:#F2EAD9; --muted:#A89A86;
+    --rose:#B76E79; --gold:#D4AF7A;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',sans-serif;font-size:17px;line-height:1.7}
+  h1,h2,h3{font-family:'Noto Serif Display',serif;font-weight:700;line-height:1.25;margin:0 0 16px}
+  a{color:var(--gold)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin:0 0 12px}
+  .muted{color:var(--muted)}
+  .small{font-size:14px}
+  .btn{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;font-size:16px;font-weight:700;padding:14px 28px;border-radius:4px}
+  .btn.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(20,18,16,.85);border-bottom:1px solid #3a322b}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px}
+  .logo{font-family:'Noto Serif Display',serif;font-size:24px;text-decoration:none;color:var(--ink)}
+  .logo span{color:var(--rose)}
+  nav a{color:var(--ink);text-decoration:none;margin-left:24px;font-weight:600;font-size:15px}
+  /* Hero */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero .shade{position:absolute;inset:0;background:rgba(20,18,16,.4)}
+  .hero .wrap{position:relative;padding-top:120px;padding-bottom:80px}
+  .hero h1{font-size:64px;max-width:720px}
+  .hero p{max-width:560px;color:var(--ink)}
+  .hero .cta{margin-top:28px;display:flex;gap:16px;flex-wrap:wrap}
+  /* Facet divider: gold line + rotated diamond */
+  .facet{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:0}
+  .facet::before,.facet::after{content:"";height:1px;background:var(--gold);flex:1}
+  .facet i{display:block;width:8px;height:8px;background:var(--rose);transform:rotate(45deg);flex:none}
+  /* Sections */
+  section{padding:96px 0}
+  section.alt{background:var(--bg2)}
+  .kicker{font-size:20px;color:var(--rose)}
+  h2.sec{font-size:40px}
+  h2.sec .kicker{margin-right:8px}
+  /* Split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .split.flip .txt{order:2}
+  .split.flip .pic{order:1}
+  .split .pic{position:relative}
+  .split .pic img{width:100%;display:block;object-fit:cover;border:1px solid var(--gold)}
+  .ratio45{aspect-ratio:4/5}
+  .price{color:var(--rose);font-weight:800;font-size:19px;margin-top:12px}
+  .star{position:absolute;top:12px;right:14px;color:var(--rose);font-size:12px;text-shadow:0 0 6px rgba(0,0,0,.8)}
+  /* Process grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .step img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border:1px solid var(--gold)}
+  .step .num{font-family:'Noto Serif Display',serif;font-size:32px;color:var(--rose)}
+  /* Story */
+  .story-imgs{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+  .story-imgs img{width:100%;object-fit:cover;display:block;border:1px solid var(--gold)}
+  .img169{aspect-ratio:16/9}
+  .img45{aspect-ratio:4/5}
+  .quotes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:48px}
+  blockquote{margin:0;background:var(--bg2);border:1px solid #3a322b;padding:24px;border-radius:6px}
+  blockquote p{margin:0 0 12px}
+  blockquote cite{color:var(--muted);font-style:normal;font-size:14px}
+  /* Contact */
+  form{max-width:640px}
+  label{display:block;font-weight:700;font-size:15px;margin:16px 0 6px}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid #4a4238;border-radius:4px;background:#241f1b;color:var(--ink);font-family:inherit;font-size:16px}
+  button[type=submit]{margin-top:20px;background:var(--rose);color:#fff;border:0;font-size:16px;font-weight:700;padding:14px 28px;border-radius:4px;cursor:pointer}
+  #form-msg{display:none;margin-top:16px;background:var(--bg2);border:1px solid var(--gold);padding:14px 18px;border-radius:4px}
+  footer{border-top:1px solid #3a322b;padding:32px 0;color:var(--muted);font-size:14px}
+  @media (max-width:1023px){
+    section{padding:64px 0}
+    .split,.grid2,.quotes{grid-template-columns:1fr}
+    .split.flip .txt,.split.flip .pic{order:initial}
+    .hero h1{font-size:40px}
+    h2.sec{font-size:28px}
+    section{padding-top:48px;padding-bottom:48px}
+    nav{display:none}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Kim Ngọc <span>✦</span></a>
+    <nav>
+      <a href="#bo-suu-tap">Bộ sưu tập</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#cau-chuyen">Câu chuyện</a>
+      <a href="#lien-he">Đặt lịch</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 1. HERO -->
+<div class="hero">
+  <img class="bg" src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1920&q=80" alt="Ảnh mẫu: cận cảnh trang sức vàng dưới ánh đèn ấm">
+  <div class="shade"></div>
+  <div class="wrap">
+    <p class="eyebrow">Tiệm trang sức thủ công</p>
+    <h1>Kim Ngọc — Trang sức chế tác bằng tay</h1>
+    <p>Mỗi món trang sức đều bắt đầu từ một bàn tay, một ngọn lửa và một viên đá — không khuôn đúc hàng loạt, không vội vàng.</p>
+    <div class="cta">
+      <a class="btn" href="#bo-suu-tap">Xem bộ sưu tập</a>
+      <a class="btn ghost" href="#lien-he">Đặt lịch tư vấn</a>
+    </div>
+  </div>
+</div>
+
+<div class="facet"><i></i></div>
+
+<!-- 2. BỘ SƯU TẬP -->
+<section id="bo-suu-tap">
+  <div class="wrap">
+    <p class="eyebrow">Bộ sưu tập</p>
+    <h2 class="sec"><span class="kicker">✦</span>Bốn nhóm trang sức, bốn câu chuyện</h2>
+    <p class="muted">Mỗi nhóm một cặp ảnh — nội dung xen kẽ trái/phải. Toàn bộ ảnh dưới đây là ảnh mẫu.</p>
+
+    <div class="split" style="margin-top:48px">
+      <div class="pic"><img class="ratio45" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: nhẫn đính đá cận cảnh"><span class="star">✦</span></div>
+      <div class="txt">
+        <h3>Nhẫn</h3>
+        <p>Nhẫn đính đá chế tác tay — từ nhẫn cầu hôn một viên đá chủ tới nhẫn đôi khắc tên, mỗi chiếc đều được đo ni tay riêng trước khi đúc.</p>
+        <p class="price">Giá mẫu: từ 850.000đ</p>
+      </div>
+    </div>
+
+    <div class="split flip" style="margin-top:96px">
+      <div class="txt">
+        <h3>Dây chuyền</h3>
+        <p>Dây chuyền mặt đá và dây chuyền khắc chữ — sợi dây mềm, khóa chắc, mặt đá được chọn tay từng viên dưới ánh đèn điểm.</p>
+        <p class="price">Giá mẫu: từ 1.200.000đ</p>
+      </div>
+      <div class="pic"><img class="ratio45" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: dây chuyền vàng cận cảnh"><span class="star">✦</span></div>
+    </div>
+
+    <div class="split" style="margin-top:96px">
+      <div class="pic"><img class="ratio45" src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: bông tai vàng cận cảnh"><span class="star">✦</span></div>
+      <div class="txt">
+        <h3>Bông tai</h3>
+        <p>Bông tai nụ, bông tai rơi và bông tai khoen — nhẹ tai, chốt chắc, đá lấp lánh mà không chói gắt.</p>
+        <p class="price">Giá mẫu: từ 680.000đ</p>
+      </div>
+    </div>
+
+    <div class="split flip" style="margin-top:96px">
+      <div class="txt">
+        <h3>Vòng tay</h3>
+        <p>Vòng tay lắc tay và vòng cứng — đo cổ tay riêng, chốt mở êm, đeo cả ngày vẫn thoải mái.</p>
+        <p class="price">Giá mẫu: từ 950.000đ</p>
+      </div>
+      <div class="pic"><img class="ratio45" src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: vòng tay vàng cận cảnh"><span class="star">✦</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="facet"><i></i></div>
+
+<!-- 3. QUY TRÌNH CHẾ TÁC -->
+<section id="quy-trinh" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Quy trình chế tác</p>
+    <h2 class="sec"><span class="kicker">✦</span>Bốn bước, một đôi tay</h2>
+    <div class="grid2" style="margin-top:48px">
+      <div class="step">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: thợ đang làm việc với trang sức">
+        <p class="num">01</p><h3>Phác thảo</h3>
+        <p class="muted">Nghe ý khách, vẽ tay vài phương án dáng và đá trước khi chạm vào kim loại.</p>
+      </div>
+      <div class="step">
+        <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: chi tiết kim loại vàng">
+        <p class="num">02</p><h3>Đúc</h3>
+        <p class="muted">Nung chảy và đúc phôi theo đúng dáng đã duyệt, giữ lại độ dày vừa tay.</p>
+      </div>
+      <div class="step">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: nhẫn đính đá cận cảnh">
+        <p class="num">03</p><h3>Chạm khắc</h3>
+        <p class="muted">Chạm tay từng đường nét và gắn đá viên một, soi dưới kính lúp trước khi qua bước cuối.</p>
+      </div>
+      <div class="step">
+        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1000&q=80" alt="Ảnh mẫu: nhẫn trong hộp trưng bày">
+        <p class="num">04</p><h3>Đánh bóng</h3>
+        <p class="muted">Đánh bóng nhiều lượt cho bề mặt mịn, sáng đều rồi mới giao tới tay khách.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="facet"><i></i></div>
+
+<!-- 4. CÂU CHUYỆN + CẢM NHẬN -->
+<section id="cau-chuyen">
+  <div class="wrap">
+    <p class="eyebrow">Câu chuyện tiệm</p>
+    <h2 class="sec"><span class="kicker">✦</span>Làm chậm, để đeo lâu</h2>
+    <div class="story-imgs" style="margin-top:32px">
+      <img class="img169" src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1400&q=80" alt="Ảnh mẫu: không gian tiệm trang sức tông tối ấm">
+      <img class="img45" src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Ảnh mẫu: thợ chính của tiệm">
+    </div>
+    <p style="max-width:760px;margin-top:32px">Kim Ngọc tin rằng một món trang sức đáng giá không nằm ở độ phô trương mà ở chỗ người đeo quên mất mình đang đeo nó — vừa tay, vừa ý, bền qua năm tháng. Vì vậy tiệm chỉ nhận số lượng vừa đủ để mỗi món đều được làm tới nơi tới chốn.</p>
+    <p class="muted small">Người phụ trách tiệm: [CẦN BỔ SUNG]</p>
+    <div class="quotes">
+      <blockquote><p>“Chiếc nhẫn vừa tay ngay lần đeo đầu tiên, đá sáng mà không chói. Đeo cả ngày không cấn.”</p><cite>— [CẦN BỔ SUNG]</cite></blockquote>
+      <blockquote><p>“Tiệm tư vấn rất kỹ, vẽ mẫu trước rồi mới làm nên mình yên tâm đặt làm quà tặng.”</p><cite>— [CẦN BỔ SUNG]</cite></blockquote>
+      <blockquote><p>“Dây chuyền khắc tên làm quà kỷ niệm, người nhận đeo suốt từ hôm đó tới giờ.”</p><cite>— [CẦN BỔ SUNG]</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="facet"><i></i></div>
+
+<!-- 5. LIÊN HỆ / ĐẶT LỊCH -->
+<section id="lien-he" class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <p class="eyebrow">Liên hệ / đặt lịch</p>
+        <h2 class="sec"><span class="kicker">✦</span>Hẹn một buổi tư vấn</h2>
+        <p class="muted">Tới tiệm xem đá tận mắt, đo ni tay và nghe thợ tư vấn dáng phù hợp — không mất phí tư vấn.</p>
+        <p>Địa chỉ: [CẦN BỔ SUNG]</p>
+        <p>Điện thoại: [CẦN BỔ SUNG]</p>
+        <p>Giờ mở cửa: [CẦN BỔ SUNG]</p>
+        <p>Người phụ trách: [CẦN BỔ SUNG]</p>
+      </div>
+      <div>
+        <form id="booking-form">
+          <label for="ten">Họ tên</label>
+          <input id="ten" name="ten" type="text" required>
+          <label for="sdt">Số điện thoại</label>
+          <input id="sdt" name="sdt" type="tel" required>
+          <label for="mau">Mẫu quan tâm</label>
+          <select id="mau" name="mau" required>
+            <option value="">— Chọn một nhóm —</option>
+            <option>Nhẫn</option><option>Dây chuyền</option><option>Bông tai</option><option>Vòng tay</option>
+          </select>
+          <label for="ngay">Ngày muốn tư vấn</label>
+          <input id="ngay" name="ngay" type="date" required>
+          <label for="ghichu">Ghi chú</label>
+          <textarea id="ghichu" name="ghichu" rows="3"></textarea>
+          <button type="submit">Gửi yêu cầu đặt lịch</button>
+          <p id="form-msg">Đây là bản giao diện mẫu — yêu cầu chưa được gửi đi thật.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Kim Ngọc — Trang sức chế tác bằng tay. Tất cả giá trên trang là giá mẫu.</p>
+    <p>Toàn bộ ảnh trên trang là ảnh mẫu (Unsplash). Địa chỉ, điện thoại, giờ mở cửa, người phụ trách và tên người cảm nhận đang chờ bổ sung dữ liệu thật.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('booking-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('form-msg').style.display = 'block';
+  });
+</script>
+</body>
+</html>
