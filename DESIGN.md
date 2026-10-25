@@ -1,4 +1,4 @@
-# DESIGN.md — Landing page tiệm trang sức thủ công Kim Ngọc (MSR-47)
+# DESIGN.md — Landing page tiệm trang sức thủ công Kim Ngọc
 
 > Tài liệu thiết kế chốt cho sprint TEC-369 (task Thiết kế TEC-371). Dev (task Dev của sprint) dựng đúng tài liệu này, không tự thêm màu, font hay khối ngoài danh sách. QA đối chiếu bản dựng với tài liệu này, kèm kiểm tra đa dạng theo OPERATIONS.md mục 16.5.
 
